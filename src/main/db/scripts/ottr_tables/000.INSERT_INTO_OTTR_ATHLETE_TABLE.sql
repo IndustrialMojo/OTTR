@@ -1,0 +1,6 @@
+INSERT INTO ebdb.OTTR_ATHLETE 
+(ID, BIRTH_DATE, NAME_LAST, NAME_MIDDLE, NAME_FIRST, GENDER) 
+VALUES (
+UNHEX(REPLACE(uuid(),'-','')), 
+(UNIX_TIMESTAMP('2005-03-30')*1000),
+'Bennett', 'Elizabeth', 'Adeline', 'F');
