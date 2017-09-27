@@ -1,0 +1,65 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.6.RELEASE")
+        	classpath 'org.liquibase:liquibase-core:3.4.1'
+		classpath "org.liquibase:liquibase-gradle-plugin:1.1.1"
+		classpath 'mysql:mysql-connector-java:5.1.13'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
+apply from: './src/main/db/liquibase.gradle'
+
+jar {
+    baseName = 'gs-spring-boot'
+    version =  '0.1.0'
+}
+
+war {
+    baseName = 'ROOT'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-test")
+
+    // JPA Data (We are going to use Repositories, Entities, Hibernate, etc...)
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile 'org.springframework.boot:spring-boot-starter-data-rest'
+
+    // Use MySQL Connector-J
+    compile 'mysql:mysql-connector-java'
+
+    // tag::actuator[]
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    // end::actuator[]
+
+
+compile 'org.apache.httpcomponents:httpcore:4.4.1'
+compile 'org.apache.httpcomponents:httpclient:4.5'
+
+compile 'org.jsoup:jsoup:1.10.3'
+
+
+    // tag::tests[]
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    // end::tests[]
+}
+
+bootRepackage.enabled = false

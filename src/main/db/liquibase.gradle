@@ -1,0 +1,50 @@
+apply plugin: 'liquibase'
+
+def db_url = 
+def db_username = 
+def db_password = 
+
+task('clean_liquibase') << {
+	println "executing clean_liquibase"
+	def changeLog = "$projectDir/src/main/db/scripts/liquibase/changelog_clean_liquibase.xml"
+	liquibase {
+		activities {
+			main {
+				changeLogFile changeLog
+				url db_url
+				username db_username
+				password db_password
+			}
+		}
+	}    
+}
+
+task('create_ottr_tables') << {
+	println "executing create_ottr_tables"
+	def changeLog = "$projectDir/src/main/db/scripts/ottr_tables/changelog_create_ottr_tables.xml"
+	liquibase {
+		activities {
+			main {
+				changeLogFile changeLog
+				url db_url
+				username db_username
+				password db_password
+			}
+		}
+	}    
+}
+
+task('drop_ottr_tables') << {
+	println "executing drop_ottr_tables"
+	def changeLog = "$projectDir/src/main/db/scripts/ottr_tables/changelog_drop_ottr_tables.xml"
+	liquibase {
+		activities {
+			main {
+				changeLogFile changeLog
+				url db_url
+				username db_username
+				password db_password
+			}
+		}
+	}    
+}

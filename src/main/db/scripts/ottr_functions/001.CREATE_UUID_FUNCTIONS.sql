@@ -1,0 +1,1 @@
+DROP TABLE ebdb.OTTR_EVENT;
