@@ -7,8 +7,6 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
     
-    <include file="000.CREATE_USR_USER_TABLE.sql" relativeToChangelogFile="true"/>
-    <include file="001.CREATE_USR_LOGIN_TABLE.sql" relativeToChangelogFile="true"/>
-    <include file="002.CREATE_USR_PROFILE_TABLE.sql" relativeToChangelogFile="true"/>
+    <include file="000.LOAD_OTTR_ATHLETE_TABLE.sql" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
