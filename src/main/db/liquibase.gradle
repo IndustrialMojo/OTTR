@@ -1,10 +1,10 @@
-apply plugin: 'liquibase'
+apply plugin: "liquibase"
 
-def db_url = 
-def db_username = 
-def db_password = 
+def db_url = rootProject.props.getProperty("spring.datasource.url") + "?allowMultiQueries=true"
+def db_username = rootProject.props.getProperty("spring.datasource.username")
+def db_password = rootProject.props.getProperty("spring.datasource.password")
 
-task('clean_liquibase') << {
+task("clean_liquibase") << {
 	println "executing clean_liquibase"
 	def changeLog = "$projectDir/src/main/db/scripts/liquibase/changelog_clean_liquibase.xml"
 	liquibase {
@@ -19,7 +19,7 @@ task('clean_liquibase') << {
 	}    
 }
 
-task('create_ottr_tables') << {
+task("create_ottr_tables") << {
 	println "executing create_ottr_tables"
 	def changeLog = "$projectDir/src/main/db/scripts/ottr_tables/changelog_create_ottr_tables.xml"
 	liquibase {
@@ -34,9 +34,69 @@ task('create_ottr_tables') << {
 	}    
 }
 
-task('drop_ottr_tables') << {
+task("load_ottr_tables") << {
+	println "executing drop_ottr_tables"
+	def changeLog = "$projectDir/src/main/db/scripts/ottr_tables/changelog_load_ottr_tables.xml"
+	liquibase {
+		activities {
+			main {
+				changeLogFile changeLog
+				url db_url
+				username db_username
+				password db_password
+			}
+		}
+	}    
+}
+
+task("drop_ottr_tables") << {
 	println "executing drop_ottr_tables"
 	def changeLog = "$projectDir/src/main/db/scripts/ottr_tables/changelog_drop_ottr_tables.xml"
+	liquibase {
+		activities {
+			main {
+				changeLogFile changeLog
+				url db_url
+				username db_username
+				password db_password
+			}
+		}
+	}    
+}
+
+task("create_usr_tables") << {
+	println "executing create_usr_tables"
+	def changeLog = "$projectDir/src/main/db/scripts/usr_tables/changelog_create_usr_tables.xml"
+	liquibase {
+		activities {
+			main {
+				changeLogFile changeLog
+				url db_url
+				username db_username
+				password db_password
+			}
+		}
+	}    
+}
+
+task("load_usr_tables") << {
+	println "executing load_usr_tables"
+	def changeLog = "$projectDir/src/main/db/scripts/usr_tables/changelog_load_usr_tables.xml"
+	liquibase {
+		activities {
+			main {
+				changeLogFile changeLog
+				url db_url
+				username db_username
+				password db_password
+			}
+		}
+	}    
+}
+
+task("drop_usr_tables") << {
+	println "executing drop_usr_tables"
+	def changeLog = "$projectDir/src/main/db/scripts/usr_tables/changelog_drop_usr_tables.xml"
 	liquibase {
 		activities {
 			main {
