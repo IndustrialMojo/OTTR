@@ -8,5 +8,9 @@
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <include file="000.UPDATE_NTT_CITY_STATE_TABLE.sql" relativeToChangelogFile="true"/>
+    <include file="001.UPDATE_NTT_LOCATION_TABLE.sql" relativeToChangelogFile="true"/>
+    <include file="002.UPDATE_NTT_NAME_TABLE.sql" relativeToChangelogFile="true"/>
+    <include file="003.UPDATE_NTT_PERSON_TABLE.sql" relativeToChangelogFile="true"/>
+    <include file="004.UPDATE_NTT_EMAIL_TABLE.sql" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
