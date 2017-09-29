@@ -49,9 +49,9 @@ public class HelloController {
 //	try {
 //		Class.forName("com.mysql.jdbc.Driver");
 //		String dbName = "ebdb";
-//		String userName = "industrialmojo";
-//		String password = "!ndustr!alm0j0";
-//		String hostname = "aa1sdf07v3y08ys.cvsoqwrmgtt8.us-west-2.rds.amazonaws.com";
+//		String userName = "";
+//		String password = "";
+//		String hostname = "";
 //		String port = "3306";
 //		String jdbcUrl = "jdbc:mysql://" + hostname + ":" + port + "/" + dbName + "?user=" + userName
 //				+ "&password=" + password;

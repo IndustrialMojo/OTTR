@@ -1,6 +1,5 @@
-INSERT INTO ebdb.USR_USER 
-(ID, EMAIL) 
-VALUES (
+INSERT INTO ebdb.USR_USER (ID, PERSON_ID, EMAIL_ID) VALUES (
 UNHEX(REPLACE(uuid(),'-','')),
-'spencer.bennett@gmail.com'
+(SELECT ID FROM ebdb.NTTY_PERSON a WHERE a.BIRTH_DATE = (UNIX_TIMESTAMP('1968-03-23')*1000)),
+(SELECT ID FROM ebdb.NTTY_EMAIL a WHERE a.EMAIL = 'spencer.bennett@gmail.com')
 );

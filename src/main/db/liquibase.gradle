@@ -108,3 +108,78 @@ task("drop_usr_tables") << {
 		}
 	}    
 }
+
+task("create_ntt_tables") << {
+	println "executing create_ntt_tables"
+	def changeLog = "$projectDir/src/main/db/scripts/ntt_tables/changelog_create_ntt_tables.xml"
+	liquibase {
+		activities {
+			main {
+				changeLogFile changeLog
+				url db_url
+				username db_username
+				password db_password
+			}
+		}
+	}    
+}
+
+task("load_ntt_tables") << {
+	println "executing load_ntt_tables"
+	def changeLog = "$projectDir/src/main/db/scripts/ntt_tables/changelog_load_ntt_tables.xml"
+	liquibase {
+		activities {
+			main {
+				changeLogFile changeLog
+				url db_url
+				username db_username
+				password db_password
+			}
+		}
+	}    
+}
+
+task("update_ntt_tables") << {
+	println "executing update_ntt_tables"
+	def changeLog = "$projectDir/src/main/db/scripts/ntt_tables/changelog_update_ntt_tables.xml"
+	liquibase {
+		activities {
+			main {
+				changeLogFile changeLog
+				url db_url
+				username db_username
+				password db_password
+			}
+		}
+	}    
+}
+
+task("clean_ntt_tables") << {
+	println "executing clean_ntt_tables"
+	def changeLog = "$projectDir/src/main/db/scripts/ntt_tables/changelog_clean_ntt_tables.xml"
+	liquibase {
+		activities {
+			main {
+				changeLogFile changeLog
+				url db_url
+				username db_username
+				password db_password
+			}
+		}
+	}    
+}
+
+task("drop_ntt_tables") << {
+	println "executing drop_ntt_tables"
+	def changeLog = "$projectDir/src/main/db/scripts/ntt_tables/changelog_drop_ntt_tables.xml"
+	liquibase {
+		activities {
+			main {
+				changeLogFile changeLog
+				url db_url
+				username db_username
+				password db_password
+			}
+		}
+	}    
+}
