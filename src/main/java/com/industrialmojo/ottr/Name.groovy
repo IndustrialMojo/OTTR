@@ -9,14 +9,28 @@ import javax.persistence.OneToOne
 import javax.persistence.Table
 
 @Entity
-@Table(name = "OTTR_ATHLETE")
-public class Athlete {
+@Table(name = "NTT_NAME")
+public class Name {
 
 	@Id
 	@Column(name = "ID")
 	byte[] id
-
-	@OneToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "PERSON_ID", nullable = true)
-	Person person
+	
+	@Column(name = "FIRST")
+	String first
+	
+	@Column(name = "SECOND")
+	String second
+	
+	@Column(name = "THIRD")
+	String third
+	
+	@Column(name = "NICK")
+	String nick
+	
+	@Column(name = "PREFIX")
+	String prefix
+	
+	@Column(name = "SUFFIX")
+	String suffix
 }
