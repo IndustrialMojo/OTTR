@@ -2,6 +2,8 @@ package com.industrialmojo.ottr
 
 import javax.persistence.Column
 import javax.persistence.Entity
+import javax.persistence.EnumType
+import javax.persistence.Enumerated
 import javax.persistence.FetchType
 import javax.persistence.Id
 import javax.persistence.JoinColumn
@@ -18,7 +20,8 @@ public class CityState {
 	
 	@Column(name = "CITY")
 	String city
-
+	
+	@Enumerated(EnumType.STRING)
 	@Column(name = "STATE")
-	String state
+	State state
 }
