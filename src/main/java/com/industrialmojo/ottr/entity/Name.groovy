@@ -1,4 +1,4 @@
-package com.industrialmojo.ottr
+package com.industrialmojo.ottr.entity
 
 import javax.persistence.Column
 import javax.persistence.Entity

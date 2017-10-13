@@ -1,4 +1,4 @@
-package com.industrialmojo.ottr
+package com.industrialmojo.ottr.entity
 
 import javax.persistence.Column
 import javax.persistence.Entity
@@ -9,6 +9,9 @@ import javax.persistence.Id
 import javax.persistence.JoinColumn
 import javax.persistence.OneToOne
 import javax.persistence.Table
+
+import com.industrialmojo.ottr.Gender
+import com.industrialmojo.util.TimeUtils
 
 @Entity
 @Table(name = "NTT_PERSON")

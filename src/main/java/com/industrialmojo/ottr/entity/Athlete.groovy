@@ -1,4 +1,4 @@
-package com.industrialmojo.ottr
+package com.industrialmojo.ottr.entity
 
 import javax.persistence.Column
 import javax.persistence.Entity
@@ -9,23 +9,14 @@ import javax.persistence.OneToOne
 import javax.persistence.Table
 
 @Entity
-@Table(name = "NTT_LOCATION")
-public class Location {
+@Table(name = "OTTR_ATHLETE")
+public class Athlete {
 
 	@Id
 	@Column(name = "ID")
 	byte[] id
 
-	@Column(name = "DESCRIPTION")
-	String description
-
-	@Column(name = "ADDRESS_1")
-	String address1
-
-	@Column(name = "ADDRESS_2")
-	String address2
-
 	@OneToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "CITY_STATE_ID", nullable = true)
-	CityState cityState
+	@JoinColumn(name = "PERSON_ID", nullable = true)
+	Person person
 }

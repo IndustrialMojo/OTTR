@@ -1,4 +1,4 @@
-package com.industrialmojo.ottr
+package com.industrialmojo.util
 
 import java.time.Instant
 import java.time.LocalDate
