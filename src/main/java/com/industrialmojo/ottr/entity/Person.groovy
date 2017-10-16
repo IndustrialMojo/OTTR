@@ -10,8 +10,8 @@ import javax.persistence.JoinColumn
 import javax.persistence.OneToOne
 import javax.persistence.Table
 
-import com.industrialmojo.ottr.Gender
-import com.industrialmojo.util.TimeUtils
+import com.industrialmojo.ottr.datum.Gender
+import com.industrialmojo.ottr.util.TimeUtils
 
 @Entity
 @Table(name = "NTT_PERSON")

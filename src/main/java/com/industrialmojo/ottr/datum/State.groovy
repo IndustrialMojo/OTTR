@@ -1,4 +1,4 @@
-package com.industrialmojo.ottr
+package com.industrialmojo.ottr.datum
 
 enum State {
 
