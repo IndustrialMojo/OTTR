@@ -1,5 +1,23 @@
-INSERT INTO ebdb.NTT_CITY_STATE (ID, CITY, STATE) 
-VALUES (UNHEX(REPLACE(uuid(),'-','')), 'Saint Paul', 'MN');
+INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
+VALUES ('Saint Paul', 'MN');
 
-INSERT INTO ebdb.NTT_CITY_STATE (ID, CITY, STATE) 
-VALUES (UNHEX(REPLACE(uuid(),'-','')), 'Maplewood', 'MN');
+INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
+VALUES ('Maplewood', 'MN');
+
+INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
+VALUES ('Oakdale', 'MN');
+
+INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
+VALUES ('Hastings', 'MN');
+
+INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
+VALUES ('Farmington', 'MN');
+
+INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
+VALUES ('South Saint Paul', 'MN');
+
+INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
+VALUES ('Inver Grove Heights', 'MN');
+
+INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
+VALUES ('Hudson', 'WI');
