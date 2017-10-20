@@ -23,6 +23,9 @@ INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE)
 VALUES ('Inver Grove Heights', 'MN');
 
 INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
+VALUES ('North Oaks', 'MN');
+
+INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
 VALUES ('Hudson', 'WI');
 
 INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
@@ -30,3 +33,12 @@ VALUES ('Mahtomedi', 'MN');
 
 INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
 VALUES ('North Saint Paul', 'MN');
+
+INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
+VALUES ('Minneapolis', 'MN');
+
+INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
+VALUES ('Woodbury', 'MN');
+
+INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
+VALUES ('Mendota Heights', 'MN');
