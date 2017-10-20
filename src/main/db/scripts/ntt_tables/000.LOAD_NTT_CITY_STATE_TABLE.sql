@@ -21,3 +21,9 @@ VALUES ('Inver Grove Heights', 'MN');
 
 INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
 VALUES ('Hudson', 'WI');
+
+INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
+VALUES ('Mahtomedi', 'MN');
+
+INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
+VALUES ('North Saint Paul', 'MN');
