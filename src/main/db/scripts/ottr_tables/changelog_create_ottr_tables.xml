@@ -9,8 +9,12 @@
     
     <include file="000.CREATE_OTTR_ATHLETE_TABLE.sql" relativeToChangelogFile="true"/>
     <include file="001.CREATE_OTTR_TEAM_TABLE.sql" relativeToChangelogFile="true"/>
-    <include file="002.CREATE_OTTR_POOL_TABLE.sql" relativeToChangelogFile="true"/>
-    <include file="003.CREATE_OTTR_MEET_TABLE.sql" relativeToChangelogFile="true"/>
-    <include file="004.CREATE_OTTR_EVENT_TABLE.sql" relativeToChangelogFile="true"/>
+    <include file="002.CREATE_OTTR_ROSTER_TABLE.sql" relativeToChangelogFile="true"/>
+    <include file="003.CREATE_OTTR_ROSTER_ENTRY_TABLE.sql" relativeToChangelogFile="true"/>
+    <include file="004.CREATE_OTTR_POOL_TABLE.sql" relativeToChangelogFile="true"/>
+    <include file="005.CREATE_OTTR_MEET_NAME_TABLE.sql" relativeToChangelogFile="true"/>
+    <include file="006.CREATE_OTTR_MEET_TABLE.sql" relativeToChangelogFile="true"/>
+    <include file="007.CREATE_OTTR_EVENT_TABLE.sql" relativeToChangelogFile="true"/>
+    <include file="008.CREATE_OTTR_RESULT_TABLE.sql" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
