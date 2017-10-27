@@ -1,5 +1,13 @@
 package com.industrialmojo.ottr.datum
 
 enum Gender {
-	M, F
+
+	F('Female'),
+	M('Male')
+
+	private String unabbreviated
+
+	Gender(String unabbreviated) {
+		this.unabbreviated = unabbreviated
+	}
 }

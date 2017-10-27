@@ -2,19 +2,17 @@ package com.industrialmojo.ottr.datum
 
 enum Stroke {
 
-	A("BK", "Backstroke"),
-	B("BR", "Breaststroke"),
-	C("FL", "Butterfly"),
-	D("FR", "Freestyle"),
-	E("IM", "Individual Medley"),
-	F("MR", "Medley Relay"),
-	G("RF", "Free Relay")
+	BK('Backstroke'),
+	BR('Breaststroke'),
+	FL('Butterfly'),
+	FR('Freestyle'),
+	IM('Individual Medley'),
+	MR('Medley Relay'),
+	RF('Free Relay')
 
-	private String abbreviated
 	private String unabbreviated
 
 	Stroke(String abbreviated, String unabbreviated) {
-		this.abbreviated = abbreviated
 		this.unabbreviated = unabbreviated
 	}
 }
