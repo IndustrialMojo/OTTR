@@ -7,7 +7,7 @@ enum Distance {
 	C('200'),
 	D('500')
 
-	private String distance
+	String distance
 
 	Distance(String distance) {
 		this.distance = distance

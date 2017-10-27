@@ -5,7 +5,7 @@ enum Gender {
 	F('Female'),
 	M('Male')
 
-	private String unabbreviated
+	String unabbreviated
 
 	Gender(String unabbreviated) {
 		this.unabbreviated = unabbreviated

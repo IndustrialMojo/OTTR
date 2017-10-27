@@ -7,7 +7,7 @@ enum CourseType {
 	SCM('Short Course Meters'),
 	LCM('Long Course Meters')
 
-	private String unabbreviated
+	String unabbreviated
 
 	CourseType(String unabbreviated) {
 		this.unabbreviated = unabbreviated

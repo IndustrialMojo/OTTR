@@ -10,9 +10,9 @@ enum Stroke {
 	MR('Medley Relay'),
 	RF('Free Relay')
 
-	private String unabbreviated
+	String unabbreviated
 
-	Stroke(String abbreviated, String unabbreviated) {
+	Stroke(String unabbreviated) {
 		this.unabbreviated = unabbreviated
 	}
 }
