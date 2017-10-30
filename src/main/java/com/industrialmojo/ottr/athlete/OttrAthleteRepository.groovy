@@ -6,6 +6,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource
 import com.industrialmojo.ottr.entity.Athlete
 
 @RepositoryRestResource
-public interface OttrAthleteRepository extends CrudRepository<Athlete, byte[]> {
+public interface OttrAthleteRepository extends CrudRepository<Athlete, Integer> {
 
 }

@@ -9,14 +9,14 @@ import javax.persistence.OneToOne
 import javax.persistence.Table
 
 @Entity
-@Table(name = "OTTR_ATHLETE")
+@Table(name = 'OTTR_ATHLETE')
 public class Athlete {
 
 	@Id
-	@Column(name = "ID")
-	byte[] id
+	@Column(name = 'ID')
+	Integer id
 
 	@OneToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "PERSON_ID", nullable = true)
+	@JoinColumn(name = 'PERSON_ID', nullable = true)
 	Person person
 }

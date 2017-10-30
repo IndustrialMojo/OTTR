@@ -10,29 +10,25 @@ import javax.persistence.JoinColumn
 import javax.persistence.OneToOne
 import javax.persistence.Table
 
-import com.industrialmojo.ottr.datum.Gender
-import com.industrialmojo.ottr.util.TimeUtils
+import com.industrialmojo.ottr.datum.Grade
 
 @Entity
-@Table(name = 'NTT_PERSON')
-class Person {
+@Table(name = 'OTTR_ROSTER_ENTRY')
+public class RosterEntry {
 
 	@Id
 	@Column(name = 'ID')
 	Integer id
 
 	@Enumerated(EnumType.STRING)
-	@Column(name = 'GENDER')
-	Gender gender
-
-	@Column(name = 'BIRTH_DATE')
-	Date birthDate
+	@Column(name = 'GRADE')
+	Grade grade
 
 	@OneToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = 'LOCATION_ID', nullable = true)
-	Location location
+	@JoinColumn(name = 'ATHLETE_ID', nullable = true)
+	Athlete athlete
 
 	@OneToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = 'NAME_ID', nullable = true)
-	Name name
+	@JoinColumn(name = 'ROSTER_ID', nullable = true)
+	Roster roster
 }

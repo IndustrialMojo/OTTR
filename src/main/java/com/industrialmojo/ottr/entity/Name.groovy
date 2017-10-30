@@ -2,35 +2,32 @@ package com.industrialmojo.ottr.entity
 
 import javax.persistence.Column
 import javax.persistence.Entity
-import javax.persistence.FetchType
 import javax.persistence.Id
-import javax.persistence.JoinColumn
-import javax.persistence.OneToOne
 import javax.persistence.Table
 
 @Entity
-@Table(name = "NTT_NAME")
+@Table(name = 'NTT_NAME')
 public class Name {
 
 	@Id
-	@Column(name = "ID")
-	byte[] id
-	
-	@Column(name = "FIRST")
+	@Column(name = 'ID')
+	Integer id
+
+	@Column(name = 'FIRST')
 	String first
-	
-	@Column(name = "SECOND")
+
+	@Column(name = 'MIDDLE')
 	String second
-	
-	@Column(name = "THIRD")
+
+	@Column(name = 'LAST')
 	String third
-	
-	@Column(name = "NICK")
+
+	@Column(name = 'NICKNAME')
 	String nick
-	
-	@Column(name = "PREFIX")
+
+	@Column(name = 'PREFIX')
 	String prefix
-	
-	@Column(name = "SUFFIX")
+
+	@Column(name = 'SUFFIX')
 	String suffix
 }
