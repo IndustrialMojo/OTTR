@@ -15,5 +15,6 @@
     <include file="005.LOAD_OTTR_MEET_NAME_TABLE.sql" relativeToChangelogFile="true"/>
     <include file="006.LOAD_OTTR_MEET_TABLE.sql" relativeToChangelogFile="true"/>
     <include file="007.LOAD_OTTR_EVENT_TABLE.sql" relativeToChangelogFile="true"/>
+    <include file="008.LOAD_OTTR_RESULT_TABLE.sql" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
