@@ -1,5 +1,7 @@
 package com.industrialmojo.ottr.entity
 
+import java.sql.Date
+
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.EnumType
@@ -11,7 +13,6 @@ import javax.persistence.OneToOne
 import javax.persistence.Table
 
 import com.industrialmojo.ottr.datum.Gender
-import com.industrialmojo.ottr.util.TimeUtils
 
 @Entity
 @Table(name = 'NTT_PERSON')

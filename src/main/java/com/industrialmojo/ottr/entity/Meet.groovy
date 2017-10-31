@@ -19,7 +19,7 @@ public class Meet {
 	Integer id
 
 	@Column(name = 'YYYY')
-	Date year
+	private Date year
 
 	@OneToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = 'NAME_ID', nullable = true)
@@ -38,6 +38,10 @@ public class Meet {
 
 	@Column(name = 'END_DATE')
 	private Long endDate
+	
+	String getYear() {
+		TimeUtils.epochToYearString(startDate)
+	}
 
 	String getStartDate() {
 		TimeUtils.epochToDateString(startDate)

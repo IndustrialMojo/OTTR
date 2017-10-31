@@ -35,5 +35,9 @@ public class Event {
 
 	@Type(type = 'yes_no')
 	@Column(name = 'IS_RELAY')
-	Boolean isRelay = false
+	Boolean isRelay
+	
+	String getDistance() {
+		distance.distance
+	}
 }

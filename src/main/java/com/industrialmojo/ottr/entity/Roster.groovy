@@ -7,6 +7,7 @@ import javax.persistence.Id
 import javax.persistence.JoinColumn
 import javax.persistence.OneToOne
 import javax.persistence.Table
+import javax.persistence.Transient
 
 import com.industrialmojo.ottr.util.TimeUtils
 
@@ -18,11 +19,11 @@ public class Roster {
 	@Column(name = 'ID')
 	Integer id
 
-	@Column(name = 'START_YYYY')
-	Date startYear
+	@Transient
+	private Long startYear
 
-	@Column(name = 'END_YYYY')
-	Date endYear
+	@Transient
+	private Long endYear
 
 	@OneToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = 'TEAM_ID', nullable = true)
@@ -36,6 +37,14 @@ public class Roster {
 
 	@Column(name = 'END_DATE')
 	private Long endDate
+
+	String getStartYear() {
+		TimeUtils.epochToYearString(startDate)
+	}
+
+	String getEndYear() {
+		TimeUtils.epochToYearString(endDate)
+	}
 
 	String getStartDate() {
 		TimeUtils.epochToDateString(startDate)

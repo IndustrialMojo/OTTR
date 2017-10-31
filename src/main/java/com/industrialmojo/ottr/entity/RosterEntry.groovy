@@ -22,7 +22,7 @@ public class RosterEntry {
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = 'GRADE')
-	Grade grade
+	private Grade grade
 
 	@OneToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = 'ATHLETE_ID', nullable = true)
@@ -31,4 +31,8 @@ public class RosterEntry {
 	@OneToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = 'ROSTER_ID', nullable = true)
 	Roster roster
+	
+	String getGrade() {
+		grade.unabbreviated
+	}
 }

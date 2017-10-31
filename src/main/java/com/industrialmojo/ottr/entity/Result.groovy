@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn
 import javax.persistence.OneToOne
 import javax.persistence.Table
 
+import com.industrialmojo.ottr.util.TimeUtils
+
 @Entity
 @Table(name = 'OTTR_RESULT')
 public class Result {
@@ -17,7 +19,7 @@ public class Result {
 	Integer id
 
 	@Column(name = 'RESULT')
-	Integer result
+	private Integer result
 
 	@OneToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = 'MEET_ID', nullable = true)
@@ -30,4 +32,8 @@ public class Result {
 	@OneToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = 'ROSTER_ENTRY_ID', nullable = true)
 	RosterEntry rosterEntry
+
+	String getResult() {
+		TimeUtils.centisecondsToTimeString(result)
+	}
 }
