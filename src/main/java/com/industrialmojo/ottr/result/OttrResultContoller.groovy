@@ -1,7 +1,7 @@
 package com.industrialmojo.ottr.result
 
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.bind.annotation.RestController
@@ -19,6 +19,7 @@ public class OttrResultContoller {
 		return "Greetings from the otter!"
 	}
 
+	@CrossOrigin
 	@RequestMapping(path = "/ottr/result/all")
 	public @ResponseBody Iterable<Athlete> getAllResults() {
 		return repository.findAll()
