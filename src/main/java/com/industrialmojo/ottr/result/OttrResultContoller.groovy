@@ -19,6 +19,7 @@ public class OttrResultContoller {
 		return "Greetings from the otter!"
 	}
 
+//	@CrossOrigin(origins = "http://localhost:9000")
 	@CrossOrigin
 	@RequestMapping(path = "/ottr/result/all")
 	public @ResponseBody Iterable<Athlete> getAllResults() {
