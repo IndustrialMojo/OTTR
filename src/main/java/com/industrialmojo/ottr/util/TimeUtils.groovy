@@ -19,11 +19,11 @@ class TimeUtils {
 	public static String epochToDateString(long epoch){
 		LocalDate localDate = epochToLocalDate(epoch)
 		StringBuilder sb = new StringBuilder()
-		sb.append(localDate.getYear().toString())
-		sb.append('-')
 		sb.append(String.format("%02d", localDate.monthValue))
-		sb.append('-')
+		sb.append('/')
 		sb.append(String.format("%02d", localDate.dayOfMonth))
+		sb.append('/')
+		sb.append(localDate.getYear().toString())
 		sb.toString()
 	}
 

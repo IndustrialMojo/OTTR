@@ -19,7 +19,10 @@ public class Result {
 	Integer id
 
 	@Column(name = 'RESULT')
-	private Integer result
+	Float result
+
+	@Column(name = 'EVENT_DATE')
+	private Long eventDate
 
 	@OneToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = 'MEET_ID', nullable = true)
@@ -33,7 +36,7 @@ public class Result {
 	@JoinColumn(name = 'ROSTER_ENTRY_ID', nullable = true)
 	RosterEntry rosterEntry
 
-	String getResult() {
-		TimeUtils.centisecondsToTimeString(result)
+	String getEventDate() {
+		TimeUtils.epochToDateString(eventDate)
 	}
 }
