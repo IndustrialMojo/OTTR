@@ -8,4 +8,5 @@ import com.industrialmojo.ottr.entity.Result
 @RepositoryRestResource
 public interface OttrResultRepository extends CrudRepository<Result, Integer> {
 
+	List<Result> findByEventId(Integer Eventid);
 }

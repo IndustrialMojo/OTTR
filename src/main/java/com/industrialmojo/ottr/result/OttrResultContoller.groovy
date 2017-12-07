@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.bind.annotation.RestController
 
-import com.industrialmojo.ottr.entity.Athlete
+import com.industrialmojo.ottr.entity.Result
 
 @RestController
 public class OttrResultContoller {
@@ -19,10 +19,16 @@ public class OttrResultContoller {
 		return "Greetings from the otter!"
 	}
 
-//	@CrossOrigin(origins = "http://localhost:9000")
+	//	@CrossOrigin(origins = "http://localhost:9000")
 	@CrossOrigin
 	@RequestMapping(path = "/ottr/result/all")
-	public @ResponseBody Iterable<Athlete> getAllResults() {
+	public @ResponseBody Iterable<Result> getAllResults() {
 		return repository.findAll()
+	}
+
+	@CrossOrigin
+	@RequestMapping(path = "/ottr/result/event")
+	public @ResponseBody Iterable<Result> getResultsByEventId() {
+		return repository.findByEventId(7);
 	}
 }
