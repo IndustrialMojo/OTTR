@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.bind.annotation.RestController
 
+import com.industrialmojo.ottr.chartist.ChartistResponse
+import com.industrialmojo.ottr.chartist.LineWithArea
+import com.industrialmojo.ottr.chartist.Series
 import com.industrialmojo.ottr.entity.Result
 
 @RestController
@@ -29,6 +32,21 @@ public class OttrResultContoller {
 	@CrossOrigin
 	@RequestMapping(path = "/ottr/result/event")
 	public @ResponseBody Iterable<Result> getResultsByEventId() {
-		return repository.findByEventId(7);
+		return repository.findByEventIdOrderByEventDateAsc(7)
+	}
+
+	@CrossOrigin
+	@RequestMapping(path = "/ottr/chartist/result/event")
+	public @ResponseBody ChartistResponse getChartistResultsByEventId() {
+		ChartistResponse response = new ChartistResponse()
+		Iterable<Result> results = repository.findByEventIdOrderByEventDateAsc(7)
+		for (Result result : results) {
+			Series series = new Series()
+			series.value = result.result
+			series.meta = result.getEventDate()
+			response.lineWithArea.series << series
+			response.lineWithArea.labels << result.getEventDate()
+		}
+		return response
 	}
 }
