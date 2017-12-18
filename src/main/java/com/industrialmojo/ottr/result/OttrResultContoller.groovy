@@ -39,12 +39,13 @@ public class OttrResultContoller {
 	@RequestMapping(path = "/ottr/chartist/result/event")
 	public @ResponseBody ChartistResponse getChartistResultsByEventId() {
 		ChartistResponse response = new ChartistResponse()
+		response.lineWithArea.series << new ArrayList<Series>();
 		Iterable<Result> results = repository.findByEventIdOrderByEventDateAsc(7)
 		for (Result result : results) {
-			Series series = new Series()
-			series.value = result.result
-			series.meta = result.getEventDate()
-			response.lineWithArea.series << series
+			StringBuilder sb = new StringBuilder()
+			sb.append(result.getEventDate())
+			Series series = new Series( value: result.result, meta: sb.toString())
+			response.lineWithArea.series[0] << series
 			response.lineWithArea.labels << result.getEventDate()
 		}
 		return response
