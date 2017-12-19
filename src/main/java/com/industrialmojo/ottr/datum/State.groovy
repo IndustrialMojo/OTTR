@@ -75,7 +75,7 @@ enum State {
 		if (!input) {
 			null
 		}
-		input = input.trim();
+		input = input.trim()
 		for (State state : values()) {
 			if (state.unabbreviated.equalsIgnoreCase(input) ||
 			state.abbreviated.equalsIgnoreCase(input)) {

@@ -9,6 +9,6 @@ import org.springframework.boot.web.support.SpringBootServletInitializer
 
 	    @Override
 	    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-	        return application.sources(Application.class)
+	        application.sources(Application.class)
 	    }
 }

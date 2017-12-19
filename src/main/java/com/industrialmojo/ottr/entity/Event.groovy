@@ -8,6 +8,7 @@ import javax.persistence.Id
 import javax.persistence.Table
 
 import org.hibernate.annotations.Type
+import org.springframework.data.annotation.Transient
 
 import com.industrialmojo.ottr.datum.CourseType
 import com.industrialmojo.ottr.datum.Distance
@@ -16,6 +17,7 @@ import com.industrialmojo.ottr.datum.Stroke
 @Entity
 @Table(name = 'OTTR_EVENT')
 public class Event {
+	private static final String SPACE = ' '
 
 	@Id
 	@Column(name = 'ID')
@@ -36,8 +38,13 @@ public class Event {
 	@Type(type = 'yes_no')
 	@Column(name = 'IS_RELAY')
 	Boolean isRelay
-	
+
 	String getDistance() {
 		distance.distance
+	}
+
+	@Transient
+	String getDistanceStrokeAndCourseType() {
+		distance.distance + SPACE + stroke.unabbreviated + SPACE + courseType
 	}
 }

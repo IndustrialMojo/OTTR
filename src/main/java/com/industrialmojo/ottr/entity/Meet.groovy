@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn
 import javax.persistence.OneToOne
 import javax.persistence.Table
 
+import org.springframework.data.annotation.Transient
+
 import com.industrialmojo.ottr.util.TimeUtils
 
 @Entity
@@ -38,7 +40,7 @@ public class Meet {
 
 	@Column(name = 'END_DATE')
 	private Long endDate
-	
+
 	String getYear() {
 		TimeUtils.epochToYearString(startDate)
 	}
@@ -49,5 +51,10 @@ public class Meet {
 
 	String getEndDate() {
 		TimeUtils.epochToDateString(endDate)
+	}
+
+	@Transient
+	String getYearAndName() {
+		getYear() + ' - ' + name.name
 	}
 }

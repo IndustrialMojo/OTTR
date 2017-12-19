@@ -14,7 +14,7 @@ enum Grade {
 	NIN('9', 'Ninth'),
 	TEN('10', 'Tenth'),
 	ELE('11', 'Eleventh'),
-	TWE('12', 'Twelth');
+	TWE('12', 'Twelth')
 
 	String abbreviated
 	String unabbreviated

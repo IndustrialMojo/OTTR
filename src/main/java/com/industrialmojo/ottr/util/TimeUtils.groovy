@@ -37,4 +37,11 @@ class TimeUtils {
 		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern('mm:ss.SS')
 		String formatDateTime = localDateTime.format(dateTimeFormatter)
 	}
+
+	public static String centisecondsToTimeString(Float value){
+		String mm = BigDecimal.valueOf(Double.valueOf(Math.floor(value / 60))).setScale(0, BigDecimal.ROUND_HALF_UP).toString()
+		BigDecimal bd = BigDecimal.valueOf(Double.valueOf(value) % 60).setScale(2, BigDecimal.ROUND_HALF_UP)
+		String ss = (bd.compareTo(new BigDecimal(10)) < 0) ? '0' + bd.toString() : bd.toString()
+		mm + ':' + ss
+	}
 }

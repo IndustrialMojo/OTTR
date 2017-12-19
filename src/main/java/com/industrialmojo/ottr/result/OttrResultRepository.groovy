@@ -7,6 +7,5 @@ import com.industrialmojo.ottr.entity.Result
 
 @RepositoryRestResource
 public interface OttrResultRepository extends CrudRepository<Result, Integer> {
-
-	List<Result> findByEventIdOrderByEventDateAsc(Integer Eventid);
+	List<Result> findByEventIdOrderByEventDateAsc(Integer Eventid)
 }

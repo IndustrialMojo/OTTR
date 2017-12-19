@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn
 import javax.persistence.OneToOne
 import javax.persistence.Table
 
+import org.springframework.data.annotation.Transient
+
 import com.industrialmojo.ottr.util.TimeUtils
 
 @Entity
@@ -38,5 +40,10 @@ public class Result {
 
 	String getEventDate() {
 		TimeUtils.epochToDateString(eventDate)
+	}
+	
+	@Transient
+	String getFormattedResult() {
+		TimeUtils.centisecondsToTimeString(result)
 	}
 }
