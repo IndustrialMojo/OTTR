@@ -3,6 +3,7 @@ package com.industrialmojo.ottr.result
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.bind.annotation.RestController
 
@@ -39,7 +40,7 @@ public class OttrResultContoller {
 
 	@CrossOrigin
 	@RequestMapping(path = "/ottr/chartist/result/event")
-	public @ResponseBody ChartistResponse findChartistResultsByEventId() {
-		service.findChartistResultByEventId(3)
+	public @ResponseBody ChartistResponse findChartistResultsByEventId(@RequestParam('eventId') Integer eventId) {
+		service.findChartistResultByEventId(eventId)
 	}
 }

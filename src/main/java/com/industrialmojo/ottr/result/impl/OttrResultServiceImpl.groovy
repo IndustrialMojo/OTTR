@@ -21,7 +21,7 @@ public class OttrResultServiceImpl implements OttrResultService {
 	public ChartistResponse findChartistResultByEventId(Integer eventId) {
 		ChartistResponse response = new ChartistResponse()
 		response.series << new ArrayList<Series>()
-		Iterable<Result> results = repository.findByEventIdOrderByEventDateAsc(3)
+		Iterable<Result> results = repository.findByEventIdOrderByEventDateAsc(eventId)
 		for (Result result : results) {
 			response.labels << result.getEventDate()
 			makeSeries(result, response)
