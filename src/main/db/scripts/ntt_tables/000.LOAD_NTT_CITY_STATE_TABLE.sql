@@ -42,3 +42,6 @@ VALUES ('Woodbury', 'MN');
 
 INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
 VALUES ('Mendota Heights', 'MN');
+
+INSERT INTO ebdb.NTT_CITY_STATE (CITY, STATE) 
+VALUES ('White Bear Lake', 'MN');
