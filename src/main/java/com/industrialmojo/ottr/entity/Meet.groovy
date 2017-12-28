@@ -30,10 +30,14 @@ public class Meet {
 	@OneToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = 'POOL_ID', nullable = true)
 	Pool pool
-
+	
 	@OneToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = 'HOST_ID', nullable = true)
 	Team host
+
+	@OneToOne(fetch = FetchType.EAGER, optional = true)
+	@JoinColumn(name = 'OPPONENT_ID', nullable = true)
+	Team opponent
 
 	@Column(name = 'START_DATE')
 	private Long startDate
@@ -54,7 +58,13 @@ public class Meet {
 	}
 
 	@Transient
-	String getYearAndName() {
-		getYear() + ' - ' + name.name
+	String getMeetName() {
+		StringBuilder sb = new StringBuilder(getYear() + ' - ')
+		if (opponent) {
+			sb.append(host.name + ' vs. ' + opponent.name)
+		} else {
+			sb.append(name.name)
+		}
+		sb.toString()
 	}
 }

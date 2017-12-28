@@ -12,7 +12,10 @@ import javax.persistence.JoinColumn
 import javax.persistence.OneToOne
 import javax.persistence.Table
 
+import org.springframework.data.annotation.Transient
+
 import com.industrialmojo.ottr.datum.Gender
+import com.industrialmojo.ottr.util.TimeUtils
 
 @Entity
 @Table(name = 'NTT_PERSON')
@@ -36,4 +39,9 @@ class Person {
 	@OneToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = 'NAME_ID', nullable = true)
 	Name name
+	
+	@Transient
+	getAge() {
+		TimeUtils.calculateAge(birthDate)
+	}
 }

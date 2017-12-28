@@ -16,5 +16,6 @@
     <include file="006.CREATE_OTTR_MEET_TABLE.sql" relativeToChangelogFile="true"/>
     <include file="007.CREATE_OTTR_EVENT_TABLE.sql" relativeToChangelogFile="true"/>
     <include file="008.CREATE_OTTR_RESULT_TABLE.sql" relativeToChangelogFile="true"/>
+    <include file="009.CREATE_OTTR_TIME_STANDARD_TABLE.sql" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

@@ -1,8 +1,9 @@
 package com.industrialmojo.ottr.util
-
+import java.sql.Date
 import java.time.Instant
 import java.time.LocalDate
 import java.time.LocalDateTime
+import java.time.Period
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
@@ -43,5 +44,11 @@ class TimeUtils {
 		BigDecimal bd = BigDecimal.valueOf(Double.valueOf(value) % 60).setScale(2, BigDecimal.ROUND_HALF_UP)
 		String ss = (bd.compareTo(new BigDecimal(10)) < 0) ? '0' + bd.toString() : bd.toString()
 		mm + ':' + ss
+	}
+
+	public static Integer calculateAge(Date birthDate) {
+		LocalDate then = birthDate.toLocalDate()
+		LocalDate now = LocalDate.now()
+		Period.between(then, now).getYears()
 	}
 }
