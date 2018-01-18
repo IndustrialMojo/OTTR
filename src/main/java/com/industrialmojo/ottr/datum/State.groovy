@@ -1,73 +1,76 @@
 package com.industrialmojo.ottr.datum
 
+import com.fasterxml.jackson.annotation.JsonFormat
+
+@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 enum State {
 
-	AL('Alabama', 'US-AL'),
-	AK('Alaska', 'US-AK'),
-	AZ('Arizona', 'US-AZ'),
-	AR('Arkansas', 'US-AR'),
-	CA('California', 'US-CA'),
-	CO('Colorado', 'US-CO'),
-	CT('Connecticut', 'US-CT'),
-	DE('Delaware', 'US-DE'),
-	DC('District of Columbia', 'US-DC'),
-	FL('Florida', 'US-FL'),
-	GA('Georgia', 'US-GA'),
-	HI('Hawaii', 'US-HI'),
-	ID('Idaho', 'US-ID'),
-	IL('Illinois', 'US-IL'),
-	IN('Indiana', 'US-IN'),
-	IA('Iowa', 'US-IA'),
-	KS('Kansas', 'US-KS'),
-	KY('Kentucky', 'US-KY'),
-	LA('Louisiana', 'US-LA'),
-	ME('Maine', 'US-ME'),
-	MD('Maryland', 'US-MD'),
-	MA('Massachusetts', 'US-MA'),
-	MI('Michigan', 'US-MI'),
-	MN('Minnesota', 'US-MN'),
-	MS('Mississippi', 'US-MS'),
-	MO('Missouri', 'US-MO'),
-	MT('Montana', 'US-MT'),
-	NE('Nebraska', 'US-NE'),
-	NV('Nevada', 'US-NV'),
-	NH('New Hampshire', 'US-NH'),
-	NJ('New Jersey', 'US-NJ'),
-	NM('New Mexico', 'US-NM'),
-	NY('New York', 'US-NY'),
-	NC('North Carolina', 'US-NC'),
-	ND('North Dakota', 'US-ND'),
-	OH('Ohio', 'US-OH'),
-	OK('Oklahoma', 'US-OK'),
-	OR('Oregon', 'US-OR'),
-	PA('Pennsylvania', 'US-PA'),
-	RI('Rhode Island', 'US-RI'),
-	SC('South Carolina', 'US-SC'),
-	SD('South Dakota', 'US-SD'),
-	TN('Tennessee', 'US-TN'),
-	TX('Texas', 'US-TX'),
-	UT('Utah', 'US-UT'),
-	VT('Vermont', 'US-VT'),
-	VA('Virginia', 'US-VA'),
-	WA('Washington', 'US-WA'),
-	WV('West Virginia', 'US-WV'),
-	WI('Wisconsin', 'US-WI'),
-	WY('Wyoming', 'US-WY'),
-	PR('Puerto Rico', 'US-PR')
+	AL('Alabama', 'AL'),
+	AK('Alaska', 'AK'),
+	AZ('Arizona', 'AZ'),
+	AR('Arkansas', 'AR'),
+	CA('California', 'CA'),
+	CO('Colorado', 'CO'),
+	CT('Connecticut', 'CT'),
+	DE('Delaware', 'DE'),
+	DC('District of Columbia', 'DC'),
+	FL('Florida', 'FL'),
+	GA('Georgia', 'GA'),
+	HI('Hawaii', 'HI'),
+	ID('Idaho', 'ID'),
+	IL('Illinois', 'IL'),
+	IN('Indiana', 'IN'),
+	IA('Iowa', 'IA'),
+	KS('Kansas', 'KS'),
+	KY('Kentucky', 'KY'),
+	LA('Louisiana', 'LA'),
+	ME('Maine', 'ME'),
+	MD('Maryland', 'MD'),
+	MA('Massachusetts', 'MA'),
+	MI('Michigan', 'MI'),
+	MN('Minnesota', 'MN'),
+	MS('Mississippi', 'MS'),
+	MO('Missouri', 'MO'),
+	MT('Montana', 'MT'),
+	NE('Nebraska', 'NE'),
+	NV('Nevada', 'NV'),
+	NH('New Hampshire', 'NH'),
+	NJ('New Jersey', 'NJ'),
+	NM('New Mexico', 'NM'),
+	NY('New York', 'NY'),
+	NC('North Carolina', 'NC'),
+	ND('North Dakota', 'ND'),
+	OH('Ohio', 'OH'),
+	OK('Oklahoma', 'OK'),
+	OR('Oregon', 'OR'),
+	PA('Pennsylvania', 'PA'),
+	RI('Rhode Island', 'RI'),
+	SC('South Carolina', 'SC'),
+	SD('South Dakota', 'SD'),
+	TN('Tennessee', 'TN'),
+	TX('Texas', 'TX'),
+	UT('Utah', 'UT'),
+	VT('Vermont', 'VT'),
+	VA('Virginia', 'VA'),
+	WA('Washington', 'WA'),
+	WV('West Virginia', 'WV'),
+	WI('Wisconsin', 'WI'),
+	WY('Wyoming', 'WY'),
+	PR('Puerto Rico', 'PR')
 
 	String unabbreviated
 	String abbreviated
 
-	State(String unabbreviated, String ISOabbreviation) {
+	State(String unabbreviated, String abbreviated) {
 		this.unabbreviated = unabbreviated
-		this.abbreviated = ISOabbreviation
+		this.abbreviated = abbreviated
 	}
 
 	public String getUnabbreviated() {
 		this.unabbreviated
 	}
 
-	public String getISOAbbreviation() {
+	public String getAbbreviated() {
 		this.abbreviated
 	}
 
