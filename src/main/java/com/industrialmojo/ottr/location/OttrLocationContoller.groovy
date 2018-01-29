@@ -26,9 +26,6 @@ public class OttrLocationContoller {
 	@CrossOrigin
 	@RequestMapping(path = "/ottr/location/city/state")
 	public @ResponseBody Iterable<CityState> findCitiesByStateAlpha(@RequestParam('state') String state) {
-		
-		System.out.println('XXX : ' + state)
-		
 		service.findCitiesByStateAlpha(state)
 	}
 }

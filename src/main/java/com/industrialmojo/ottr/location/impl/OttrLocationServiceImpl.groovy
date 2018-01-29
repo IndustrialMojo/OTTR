@@ -21,13 +21,7 @@ public class OttrLocationServiceImpl implements OttrLocationService {
 
 	@Override
 	public Iterable<CityState> findCitiesByStateAlpha(String state) {	
-		System.out.println('YYY : ' + state)
-		
 		State stateEnum = State.parse(state)
-		
-		System.out.println('YYZ : ' + state)
-		
-		
 		repository.findCitiesByStateAlpha(state)
 	}
 }
